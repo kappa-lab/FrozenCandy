@@ -31,7 +31,6 @@ public class ParticleManager : MonoBehaviour {
     }
 
     private void OnArrived(Spawn sp, Marker marker) {
-        var shuffle = sp.to.next.OrderBy(i => Guid.NewGuid()).ToList();
 
         if (marker.next.Length==1)
         {
@@ -40,12 +39,13 @@ public class ParticleManager : MonoBehaviour {
         }
         else if (marker.next.Length == 0)
         {
-            var initm = initialMarkers[0];
-            shuffle = initm.next.OrderBy(i => Guid.NewGuid()).ToList();
-            sp.RegisterMarker(initm, shuffle[0]);
+            var initm = initialMarkers.OrderBy(i => Guid.NewGuid()).FirstOrDefault();
+
+            sp.RegisterMarker(initm, initm.next.OrderBy(i => Guid.NewGuid()).FirstOrDefault());
             return;
         }
 
+        var shuffle = sp.to.next.OrderBy(i => Guid.NewGuid()).ToList();
 
         sp.RegisterMarker(sp.to, shuffle[0]);
         shuffle.RemoveAt(0);
