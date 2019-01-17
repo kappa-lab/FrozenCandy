@@ -28,7 +28,7 @@ public class Spawn : MonoBehaviour {
         var d = Vector3.Distance(from.transform.position, to.transform.position);
 
         transform.position = from.transform.position;
-        transform.DOMove(to.transform.position, d * 0.7f)
+        transform.DOMove(to.transform.position, d * 0.1f)
             .SetEase(Ease.Linear)
             .OnComplete(Next);
     }
