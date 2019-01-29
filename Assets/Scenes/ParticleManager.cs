@@ -51,7 +51,7 @@ public class ParticleManager : MonoBehaviour {
         shuffle.RemoveAt(0);
         foreach (var m in shuffle)
         {
-            Debug.Log(m.transform.position);
+//            Debug.Log(m.transform.position);
             if (spawns.Count < 12) {
                 Create(marker, m);
             }
