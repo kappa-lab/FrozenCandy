@@ -6,24 +6,29 @@ public class WiredMainScene : MonoBehaviour {
 
     public PlayableDirector director;
     public int index = 0;
-    public int[] keyFrames = new int[3] { 0,10,15};
+    int[] keyFrames = new int[3] { 0,10,15};
     public float alpha = 1f;
     public GameObject waterfall;
+    public GameObject terrain;
+    public GameObject terrain_rock;
     public Color color;
     // Use this for initialization
     void Start () {
         Debug.Log(director);
         color = Color.white;
+        terrain_rock.SetActive(false);
     }
 
     // Update is called once per frame
     void Update () {
 
+        //シーン遷移停止
         if (Input.GetKeyDown(KeyCode.Space))
         {
             director.enabled = !director.enabled;
             return;
         }
+        //次シーン
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             index++;
@@ -31,6 +36,7 @@ public class WiredMainScene : MonoBehaviour {
             director.time = keyFrames[index];
             return;
         }
+        //前シーン
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             index--;
@@ -38,6 +44,7 @@ public class WiredMainScene : MonoBehaviour {
             director.Play();
             return;
         }
+        //滝色 alpha-
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             color.a -= .06f;
@@ -45,6 +52,7 @@ public class WiredMainScene : MonoBehaviour {
             updateColor();
             return;
         }
+        //滝色 alpha＋
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             color.a += .06f;
@@ -52,6 +60,7 @@ public class WiredMainScene : MonoBehaviour {
             updateColor();
              return;
         }
+        //滝色 yellow add
         if (Input.GetKeyDown(KeyCode.Y))
         {
             color.b -= .06f;
@@ -59,6 +68,7 @@ public class WiredMainScene : MonoBehaviour {
             updateColor(); 
             return;
         }
+        //滝色 blue add
         if (Input.GetKeyDown(KeyCode.B))
         {
             color.r -= .06f;
@@ -68,7 +78,7 @@ public class WiredMainScene : MonoBehaviour {
             updateColor();
             return;
         }
-
+        //滝色 white add
         if (Input.GetKeyDown(KeyCode.W))
         {
             color.r += .06f;
@@ -80,6 +90,8 @@ public class WiredMainScene : MonoBehaviour {
             updateColor();
             return;
         }
+
+        //滝色 Preset Pink
         if (Input.GetKeyDown(KeyCode.P))
         {
             color.r = 255 / 255f;
@@ -88,6 +100,8 @@ public class WiredMainScene : MonoBehaviour {
             updateColor();
             return;
         }
+
+        //滝色 Preset ターコイズ
         if (Input.GetKeyDown(KeyCode.T))
         {
             color.r = 87 / 255f;
@@ -96,8 +110,21 @@ public class WiredMainScene : MonoBehaviour {
             updateColor();
             return;
         }
-
+        //地形切り替え
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            if(terrain_rock.activeSelf)
+            {
+                terrain_rock.SetActive(false);
+            }
+            else
+            {
+                terrain_rock.SetActive(true);
+            }
+            return;
+        }
     }
+
     void updateColor() {
         var ps = waterfall.GetComponentsInChildren<ParticleSystem>();
         foreach (var p in ps)
