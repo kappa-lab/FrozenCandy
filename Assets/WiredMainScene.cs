@@ -115,10 +115,12 @@ public class WiredMainScene : MonoBehaviour {
         {
             if(terrain_rock.activeSelf)
             {
+                terrain.SetActive(true);
                 terrain_rock.SetActive(false);
             }
             else
             {
+                terrain.SetActive(false);
                 terrain_rock.SetActive(true);
             }
             return;

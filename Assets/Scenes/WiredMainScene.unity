@@ -14110,7 +14110,7 @@ Transform:
   - {fileID: 548174392}
   - {fileID: 1661320634}
   - {fileID: 898609353}
-  - {fileID: 954689769}
+  - {fileID: 1661791272}
   - {fileID: 236955500}
   - {fileID: 1189215196}
   - {fileID: 1919616173}
@@ -14159,7 +14159,7 @@ PlayableDirector:
   - key: {fileID: 114565525370813404, guid: c2f3bc62640f942adac5c9fd6d1f7214, type: 2}
     value: {fileID: 898609352}
   - key: {fileID: 114623702543026414, guid: c2f3bc62640f942adac5c9fd6d1f7214, type: 2}
-    value: {fileID: 954689768}
+    value: {fileID: 1661791271}
   - key: {fileID: 114642046705207490, guid: c2f3bc62640f942adac5c9fd6d1f7214, type: 2}
     value: {fileID: 697178079}
   m_ExposedReferences:
@@ -35138,12 +35138,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 954689768}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.69, y: 0, z: -10.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 179521597}
-  m_RootOrder: 3
+  m_Father: {fileID: 1661791272}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!154 &954689770
 TerrainCollider:
@@ -78555,6 +78555,35 @@ Transform:
   - {fileID: 848995949}
   m_Father: {fileID: 179521597}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1661791271
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1661791272}
+  m_Layer: 0
+  m_Name: TerrainWrapper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1661791272
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1661791271}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 954689769}
+  m_Father: {fileID: 179521597}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1719275220
 Prefab:
