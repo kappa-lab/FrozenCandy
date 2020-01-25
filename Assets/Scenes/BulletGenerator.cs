@@ -31,10 +31,10 @@ public class BulletGenerator : MonoBehaviour
     void Generate()
     {
         var q = new Quaternion();
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 20; i++)
         {
             var p = new Vector3(
-                Random.Range(-3, 3),
+                Random.Range(-6, 6),
                 Random.Range(4, 8),
                 Random.Range(-3, 3)
             );
