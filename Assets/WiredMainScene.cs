@@ -17,6 +17,8 @@ public class WiredMainScene : MonoBehaviour {
         Debug.Log(director);
         color = Color.white;
         terrain_rock.SetActive(false);
+        director.time = keyFrames[index];
+        director.Stop();
     }
 
     // Update is called once per frame
