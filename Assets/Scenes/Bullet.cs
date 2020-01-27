@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public float life = 1.0f;
     public float lifeTime = 1.0f;
+    public bool firing = false;
     public Terrain wall;
     public long Id;
     public ParticleSystem explosion;
@@ -43,7 +44,16 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.gameObject == wall.gameObject) {
+        if (collision.gameObject == null) return;
+
+        var bulet = collision.gameObject.GetComponent<Bullet>();
+        if (collision.gameObject.name.Contains("bone")
+         || collision.gameObject.name.Contains("palm")
+         || (bulet && bulet.firing)) {
+
+            warhead.gameObject.SetActive(true);
+        }
+        if (collision.gameObject == wall.gameObject && warhead.gameObject.activeSelf) {
             Debug.Log(Id + ": " +collision.collider.gameObject);
             Explode();
         }

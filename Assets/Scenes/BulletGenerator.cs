@@ -16,7 +16,7 @@ public class BulletGenerator : MonoBehaviour
     }
 
     void StartCharge() {
-        var chargeTime = Random.Range(.3f, .5f);
+        var chargeTime = Random.Range(.16f, .24f);
         DOTween
             .To(() => charge, (x) => charge = x, 1f, chargeTime)
             .OnComplete(OnCharged);
@@ -34,7 +34,7 @@ public class BulletGenerator : MonoBehaviour
         for (int i = 0; i < 20; i++)
         {
             var p = new Vector3(
-                Random.Range(-6, 6),
+                Random.Range(-8, 8),
                 Random.Range(4, 8),
                 Random.Range(-3, 3)
             );
