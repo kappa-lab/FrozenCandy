@@ -343,6 +343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 1
   lifeTime: 1
+  firing: 0
   wall: {fileID: 0}
   Id: 0
   explosion: {fileID: 198061484848850946}
@@ -1120,7 +1121,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 10
       minScalar: 10
       maxCurve:
         serializedVersion: 2

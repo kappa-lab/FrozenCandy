@@ -20566,11 +20566,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 20, y: 20, z: 2}
   m_Center: {x: 0, y: -3, z: 0}
---- !u!198 &593730360 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 198039707597638360, guid: 8b7a5319291744c7da49a6588f881c91,
-    type: 2}
-  m_PrefabInternal: {fileID: 961771165}
 --- !u!4 &610856193 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4304171363524740, guid: 8b7a5319291744c7da49a6588f881c91,
@@ -20590,7 +20585,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &611540005
 Transform:
   m_ObjectHideFlags: 0
@@ -25741,11 +25736,6 @@ Transform:
   m_Father: {fileID: 2091119554}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!198 &818310646 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 198061484848850946, guid: 8b7a5319291744c7da49a6588f881c91,
-    type: 2}
-  m_PrefabInternal: {fileID: 961771165}
 --- !u!1 &826509178
 GameObject:
   m_ObjectHideFlags: 0
@@ -35833,29 +35823,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 198061484848850946, guid: 8b7a5319291744c7da49a6588f881c91,
-        type: 2}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1841201842418356, guid: 8b7a5319291744c7da49a6588f881c91, type: 2}
-      propertyPath: m_Name
-      value: warhead
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1583415245826050, guid: 8b7a5319291744c7da49a6588f881c91, type: 2}
-      propertyPath: m_Name
-      value: explotion
-      objectReference: {fileID: 0}
-    - target: {fileID: 114016342557826430, guid: 8b7a5319291744c7da49a6588f881c91,
-        type: 2}
-      propertyPath: explosion
-      value: 
-      objectReference: {fileID: 818310646}
-    - target: {fileID: 114016342557826430, guid: 8b7a5319291744c7da49a6588f881c91,
-        type: 2}
-      propertyPath: warhead
-      value: 
-      objectReference: {fileID: 593730360}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b7a5319291744c7da49a6588f881c91, type: 2}
   m_IsPrefabAsset: 0
