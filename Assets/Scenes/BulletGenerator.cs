@@ -21,13 +21,15 @@ public class BulletGenerator : MonoBehaviour
     public Range xRange = new Range(-9, 9);
     public Range yRange = new Range(4, 8);
     public Range zRange = new Range(-3, 3);
-    void Start()
+
+    void OnEnable()    
     {
         Generate();
         StartCharge();
     }
 
     void StartCharge() {
+        if (!enabled) return;
         var chargeTime = Random.Range(.16f, .24f);
         DOTween
             .To(() => charge, (x) => charge = x, 1f, chargeTime)
@@ -61,11 +63,14 @@ public class BulletGenerator : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
+    public void SetEnabled(bool value) {
+        enabled = value;
+        transform.parent.gameObject.SetActive(value);
+        if (value) {
+            foreach (Transform child in transform)
+            {
+                Destroy(child.gameObject);
+            }
+        }
     }
-
-
 }
