@@ -27,7 +27,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1205072983752264
 GameObject:
   m_ObjectHideFlags: 1
@@ -132,7 +132,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1923697645899206
 GameObject:
   m_ObjectHideFlags: 1
@@ -311,8 +311,8 @@ Rigidbody:
   m_GameObject: {fileID: 1299517656143188}
   serializedVersion: 2
   m_Mass: 0.6
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 0.8
+  m_AngularDrag: 0.8
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -356,7 +356,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1841201842418356}
   serializedVersion: 5
-  lengthInSec: 5
+  lengthInSec: 8
   simulationSpeed: 1
   stopAction: 0
   looping: 1
@@ -1122,7 +1122,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 1
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -2504,7 +2504,7 @@ ParticleSystem:
     inWorldSpace: 1
   InheritVelocityModule:
     enabled: 0
-    m_Mode: 0
+    m_Mode: 1
     m_Curve:
       serializedVersion: 2
       minMaxState: 0
@@ -27616,7 +27616,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1450817995117492}
   serializedVersion: 5
-  lengthInSec: 5
+  lengthInSec: 8
   simulationSpeed: 1
   stopAction: 0
   looping: 1
@@ -28155,7 +28155,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 500
+    maxNumParticles: 100
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -28214,8 +28214,8 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 5
     enabled: 1
-    type: 4
-    angle: 15
+    type: 0
+    angle: 90
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -28245,7 +28245,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.01
+      value: 0.005
       mode: 0
       spread: 0
       speed:
@@ -28491,11 +28491,11 @@ ParticleSystem:
         - serializedVersion: 3
           time: 1
           value: 0
-          inSlope: 0
-          outSlope: 0
+          inSlope: -0.02351374
+          outSlope: -0.02351374
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.33333334
+          inWeight: 0.23113221
           outWeight: 0.33333334
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -28803,23 +28803,23 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 0.5137255, g: 0.34509805, b: 0.08627451, a: 1}
-        key1: {r: 1, g: 0.52156866, b: 0.26666668, a: 1}
+        key1: {r: 1, g: 0.7497939, b: 0.26666665, a: 1}
         key2: {r: 1, g: 0.84313726, b: 0.42745098, a: 0}
         key3: {r: 1, g: 0.6784314, b: 0.42745098, a: 1}
         key4: {r: 0.18431373, g: 0.08235294, b: 0.0627451, a: 0}
-        key5: {r: 1, g: 0.35686275, b: 0, a: 0}
+        key5: {r: 0.18431373, g: 0.08235294, b: 0.0627451, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
         ctime1: 1533
         ctime2: 4982
-        ctime3: 38899
+        ctime3: 40092
         ctime4: 65535
-        ctime5: 40624
+        ctime5: 65535
         ctime6: 0
         ctime7: 0
         atime0: 106
-        atime1: 41965
+        atime1: 27178
         atime2: 65535
         atime3: 65535
         atime4: 0
@@ -29566,7 +29566,7 @@ ParticleSystem:
     inWorldSpace: 1
   InheritVelocityModule:
     enabled: 0
-    m_Mode: 0
+    m_Mode: 1
     m_Curve:
       serializedVersion: 2
       minMaxState: 0
@@ -31191,7 +31191,7 @@ ParticleSystem:
     radiusScale: 1
   SubModule:
     serializedVersion: 2
-    enabled: 1
+    enabled: 0
     subEmitters:
     - serializedVersion: 2
       emitter: {fileID: 198190262978751534}
