@@ -153,11 +153,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afca5a5870ee24b90b88278a37a836e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iginitionOnCreate: 0
   bullet: {fileID: 114016342557826430, guid: 8b7a5319291744c7da49a6588f881c91, type: 2}
+  iginitionOnCreate: 0
   charge: 0
   wall: {fileID: 2136807085}
-  numCreation: 20
+  creationStep: 0
+  numCreation: 0
+  createionRange:
+    min: 20
+    max: 20
   numBullet: 0
   xRange:
     min: -9
@@ -1094,11 +1098,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afca5a5870ee24b90b88278a37a836e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iginitionOnCreate: 1
   bullet: {fileID: 114016342557826430, guid: 19bbdbe0ef5804b9b946acb79060f6c9, type: 2}
+  iginitionOnCreate: 1
   charge: 0
   wall: {fileID: 2136807085}
-  numCreation: 8
+  creationStep: 0
+  numCreation: 0
+  createionRange:
+    min: 1
+    max: 8
   numBullet: 0
   xRange:
     min: -30

@@ -12,12 +12,15 @@ public class BulletGenerator : MonoBehaviour
             this.max = max;
         }
     }
-    public bool iginitionOnCreate = false;
     public Bullet bullet;
+    public bool iginitionOnCreate = false;
+
     public float charge = 0;
     public Terrain wall;
-    public int numCreation = 20;
-    public long numBullet=0;
+    public float creationStep = 0.0f;
+    public float numCreation;
+    public Range createionRange = new Range(20, 20);
+    public long numBullet = 0;
     public Range xRange = new Range(-9, 9);
     public Range yRange = new Range(4, 8);
     public Range zRange = new Range(-3, 3);
@@ -45,6 +48,9 @@ public class BulletGenerator : MonoBehaviour
     void Generate()
     {
         var q = new Quaternion();
+        creationStep += 0.04f;
+        var cof = (Mathf.Sin(creationStep) + 1) / 2;
+        numCreation = (createionRange.max - createionRange.min) * cof + createionRange.min;
         for (int i = 0; i < numCreation; i++)
         {
             var p = new Vector3(
@@ -71,6 +77,8 @@ public class BulletGenerator : MonoBehaviour
             {
                 Destroy(child.gameObject);
             }
+        }else {
+         
         }
     }
 }

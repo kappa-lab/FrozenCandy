@@ -31,7 +31,8 @@ public class Bullet : MonoBehaviour
     void Explode()
     {
         tail.transform.SetParent(transform.root, true);
-        explosion.transform.SetParent(transform.root, true);
+
+        explosion.transform.SetParent(null, true);
         explosion.gameObject.SetActive(true);
 
         tween.Kill();
