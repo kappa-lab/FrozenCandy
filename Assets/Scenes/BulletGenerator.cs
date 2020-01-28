@@ -4,11 +4,23 @@ using DG.Tweening;
 
 public class BulletGenerator : MonoBehaviour
 {
+    [System.Serializable]
+    public class Range {
+        public int min, max;
+        public Range(int min, int max) {
+            this.min = min;
+            this.max = max;
+        }
+    }
+    public bool iginitionOnCreate = false;
     public Bullet bullet;
     public float charge = 0;
     public Terrain wall;
+    public int numCreation = 20;
     public long numBullet=0;
-    // Use this for initialization
+    public Range xRange = new Range(-9, 9);
+    public Range yRange = new Range(4, 8);
+    public Range zRange = new Range(-3, 3);
     void Start()
     {
         Generate();
@@ -31,18 +43,21 @@ public class BulletGenerator : MonoBehaviour
     void Generate()
     {
         var q = new Quaternion();
-        for (int i = 0; i < 20; i++)
+        for (int i = 0; i < numCreation; i++)
         {
             var p = new Vector3(
-                Random.Range(-8, 8),
-                Random.Range(4, 8),
-                Random.Range(-3, 3)
+                Random.Range(xRange.min, xRange.max),
+                Random.Range(yRange.min, yRange.max),
+                Random.Range(zRange.min, zRange.max)
             );
 
             var b = Instantiate(bullet, this.transform,false) as Bullet;
             b.transform.localPosition = p;
             b.wall = wall;
             b.Id = numBullet++;
+
+            if (iginitionOnCreate) b.Ignition();
+            
         }
     }
 

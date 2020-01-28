@@ -11,6 +11,7 @@ public class Bullet : MonoBehaviour
     public long Id;
     public ParticleSystem explosion;
     public ParticleSystem warhead;
+    public ParticleSystem tail;
     private Tween tween;
     void Start()
     {
@@ -29,6 +30,7 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Explode()
     {
+        tail.transform.SetParent(transform.root, true);
         explosion.transform.SetParent(transform.root, true);
         explosion.gameObject.SetActive(true);
 
@@ -37,9 +39,17 @@ public class Bullet : MonoBehaviour
         var l = 1f;
         tween = DOTween
             .To(() => l, (x) => l = x, 0, explosion.duration)
-            .OnComplete(()=> { Destroy(explosion.gameObject); });
+            .OnComplete(()=> {
+                Destroy(tail.gameObject);
+                Destroy(explosion.gameObject); 
+            });
 
         SelfDelete();
+    }
+
+    public void Ignition() 
+    {
+        warhead.gameObject.SetActive(true);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -50,8 +60,7 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.name.Contains("bone")
          || collision.gameObject.name.Contains("palm")
          || (bulet && bulet.firing)) {
-
-            warhead.gameObject.SetActive(true);
+            Ignition();
         }
         if (collision.gameObject == wall.gameObject && warhead.gameObject.activeSelf) {
             Debug.Log(Id + ": " +collision.collider.gameObject);
