@@ -23,11 +23,11 @@ public class BulletGenerator : MonoBehaviour
     public Range yRange = new Range(4, 8);
     public Range zRange = new Range(-3, 3);
 
-    [SerializeField, Space(15), Header("== readonly ==")
-    ]private float _charge = 0;
-    [SerializeField] private float _creationPhase = 0f;
-    [SerializeField] private float _numCreation = 0;
-    [SerializeField] private long _numBullet = 0;
+    [Space(15), Header("== readonly ==")]
+    public float _charge = 0;
+    public float _creationPhase = 0f;
+    public float _numCreation = 0;
+    public long _numBullet = 0;
 
     void OnEnable()    
     {

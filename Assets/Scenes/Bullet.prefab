@@ -133,7 +133,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1923697645899206
 GameObject:
   m_ObjectHideFlags: 1
@@ -311,9 +311,9 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1299517656143188}
   serializedVersion: 2
-  m_Mass: 0.1
-  m_Drag: 0.3
-  m_AngularDrag: 0.05
+  m_Mass: 2
+  m_Drag: 0.6
+  m_AngularDrag: 0.3
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -342,14 +342,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4fad455c7c04945aa3b409db7b0ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cloneRate: 0.3
+  firing: 0
   life: 1
   lifeTime: 1
-  firing: 0
   wall: {fileID: 0}
   Id: 0
   explosion: {fileID: 198061484848850946}
   warhead: {fileID: 198039707597638360}
   tail: {fileID: 198903638739551622}
+  rigidbody: {fileID: 54210077780029726}
 --- !u!135 &135204229863529586
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -14155,7 +14157,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1142344761287792}
   serializedVersion: 5
-  lengthInSec: 5
+  lengthInSec: 2
   simulationSpeed: 1
   stopAction: 0
   looping: 1
@@ -14227,8 +14229,8 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 2
-      minScalar: 1.5
+      scalar: 1
+      minScalar: 0.001
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -14378,8 +14380,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.5
-      minScalar: 0.1
+      scalar: 0.6
+      minScalar: 0.2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -14676,13 +14678,13 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 10000
+    maxNumParticles: 100
     size3D: 0
     rotation3D: 0
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -14766,7 +14768,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.01
+      value: 0.003
       mode: 0
       spread: 0
       speed:
@@ -14885,7 +14887,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 2
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -27629,7 +27631,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1450817995117492}
   serializedVersion: 5
-  lengthInSec: 5
+  lengthInSec: 3
   simulationSpeed: 1
   stopAction: 0
   looping: 1
@@ -27870,8 +27872,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.2
-      minScalar: 0.08
+      scalar: 0.7
+      minScalar: 0.2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -28174,7 +28176,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.3
       minScalar: 1
       maxCurve:
         serializedVersion: 2
