@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 23367553007993832}
   - component: {fileID: 54210077780029726}
   - component: {fileID: 114016342557826430}
+  - component: {fileID: 135204229863529586}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -213,7 +214,7 @@ Transform:
   m_GameObject: {fileID: 1299517656143188}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4633735123299350}
   - {fileID: 4289910725310354}
@@ -310,8 +311,8 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1299517656143188}
   serializedVersion: 2
-  m_Mass: 0.6
-  m_Drag: 0
+  m_Mass: 0.1
+  m_Drag: 0.3
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -326,9 +327,9 @@ BoxCollider:
   m_GameObject: {fileID: 1299517656143188}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0, y: 0, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114016342557826430
 MonoBehaviour:
@@ -349,6 +350,18 @@ MonoBehaviour:
   explosion: {fileID: 198061484848850946}
   warhead: {fileID: 198039707597638360}
   tail: {fileID: 198903638739551622}
+--- !u!135 &135204229863529586
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1299517656143188}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!198 &198039707597638360
 ParticleSystem:
   m_ObjectHideFlags: 1

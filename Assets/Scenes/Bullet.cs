@@ -50,6 +50,7 @@ public class Bullet : MonoBehaviour
 
     public void Ignition() 
     {
+        firing = true;
         warhead.gameObject.SetActive(true);
     }
 
@@ -60,7 +61,8 @@ public class Bullet : MonoBehaviour
         var bulet = collision.gameObject.GetComponent<Bullet>();
         if (collision.gameObject.name.Contains("bone")
          || collision.gameObject.name.Contains("palm")
-         || (bulet && bulet.firing)) {
+         //|| (bulet && bulet.firing)
+         ){
             Ignition();
         }
         if (collision.gameObject == wall.gameObject && warhead.gameObject.activeSelf) {
