@@ -311,7 +311,7 @@ Rigidbody:
   m_GameObject: {fileID: 1299517656143188}
   serializedVersion: 2
   m_Mass: 0.6
-  m_Drag: 0.8
+  m_Drag: 0.9
   m_AngularDrag: 0.8
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -341,14 +341,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4fad455c7c04945aa3b409db7b0ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cloneRate: 0
+  maxVelocity: 60
+  firing: 0
   life: 1
   lifeTime: 1
-  firing: 0
   wall: {fileID: 0}
   Id: 0
   explosion: {fileID: 198061484848850946}
   warhead: {fileID: 198039707597638360}
   tail: {fileID: 198903638739551622}
+  rigidbody: {fileID: 54210077780029726}
 --- !u!198 &198039707597638360
 ParticleSystem:
   m_ObjectHideFlags: 1

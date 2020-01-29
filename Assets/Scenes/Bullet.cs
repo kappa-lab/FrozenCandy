@@ -5,6 +5,7 @@ using DG.Tweening;
 public class Bullet : MonoBehaviour
 {
     public float cloneRate = 0;
+    public float maxVelocity = 60;
 
     [Space(15), Header("== readonly ==")]
     public bool firing = false;
@@ -16,9 +17,12 @@ public class Bullet : MonoBehaviour
     public ParticleSystem warhead;
     public ParticleSystem tail;
     public Rigidbody rigidbody;
+
     private Tween tween;
+    private float sqrMaxMagnitude;
     void Start()
     {
+        sqrMaxMagnitude = maxVelocity * maxVelocity;
         var tgt = 0f;
         lifeTime = Random.Range(4f, 6.6f);
         tween = DOTween
@@ -70,6 +74,17 @@ public class Bullet : MonoBehaviour
         warhead.gameObject.SetActive(true);
     }
 
+    public void RoundMaxVelocity()
+    {
+        var v = rigidbody.velocity;
+        if (v.sqrMagnitude > sqrMaxMagnitude)
+        {
+            rigidbody.velocity = v.normalized * maxVelocity;
+            Debug.Log(v.sqrMagnitude + " => " + rigidbody.velocity.sqrMagnitude);
+        }
+    }
+
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject == null) return;
@@ -84,17 +99,7 @@ public class Bullet : MonoBehaviour
             Ignition();
         }
 
-        var v = rigidbody.velocity;
-        var m = v.magnitude;
-        var max = 80;
-        if (m > max)
-        {
-            v.x = v.x * max / m;
-            v.y = v.y * max / m;
-            v.z = v.z * max / m;
-            Debug.Log(m + " => " + v.magnitude);
-            rigidbody.velocity = v;
-        }
+        RoundMaxVelocity();
 
         if (collision.gameObject == wall.gameObject && warhead.gameObject.activeSelf) {
 //            Debug.Log(Id + ": " +collision.collider.gameObject);

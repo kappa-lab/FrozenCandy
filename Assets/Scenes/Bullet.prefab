@@ -343,6 +343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cloneRate: 0.3
+  maxVelocity: 30
   firing: 0
   life: 1
   lifeTime: 1
