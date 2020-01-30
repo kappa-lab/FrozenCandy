@@ -7,8 +7,11 @@ public class TIVScene : MonoBehaviour {
     public int state = 0;
     public BulletGenerator throwStage;
     public BulletGenerator touchStage;
-	// Use this for initialization
-	void Start () {
+    public Animator spotLightTerrace;
+    public Animator spotLightGround;
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -20,6 +23,19 @@ public class TIVScene : MonoBehaviour {
             state = (++state) % 3;
             throwStage.SetEnabled(state == 1);
             touchStage.SetEnabled(state == 2);
+            return;
+        }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            var enable = spotLightTerrace.gameObject.activeSelf;
+            spotLightTerrace.gameObject.SetActive(!enable);
+            return;
+        }
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            var enable = spotLightGround.gameObject.activeSelf;
+            spotLightGround.gameObject.SetActive(!enable);
             return;
         }
 
