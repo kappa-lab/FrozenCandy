@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TIVScene.unity
     guid: 64b077b348663470b88a3fd2ebd493b3
+  - enabled: 0
+    path: Assets/Madmapper.unity
+    guid: ed1505a85347141b6966fed920528f1c
   m_configObjects: {}
