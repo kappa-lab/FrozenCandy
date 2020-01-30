@@ -848,7 +848,7 @@ GameObject:
   - component: {fileID: 744381603}
   - component: {fileID: 744381602}
   m_Layer: 0
-  m_Name: SpotLightGraound
+  m_Name: SpotLightGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -906,7 +906,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &819718273
 Transform:
   m_ObjectHideFlags: 0
@@ -1876,7 +1876,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1845381844
 Transform:
   m_ObjectHideFlags: 0
